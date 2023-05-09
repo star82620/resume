@@ -1,0 +1,341 @@
+html,body {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Noto Sans TC', sans-serif;  */
+    font-family: 'Noto Serif', serif;
+    /* font-weight: 300; */
+    font-size: 0.95rem;
+    line-height: 1.5rem;
+    letter-spacing: 0.05rem;
+}
+
+:root {
+    --font_gray: #666;
+    --bg_gray: #eee;
+
+}
+
+*>a {
+    color: #aaa;
+    text-decoration: none;
+    border-bottom: 1px solid #aaa;
+}
+
+
+.cover {
+    height: 240px;
+    width: 100vw;
+    background: 
+    url("https://images.unsplash.com/photo-1590966237968-8ef11924362d?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=4800") 
+        scroll 
+        no-repeat 
+        center center / cover;
+}
+
+.content {
+    max-width: 1360px;
+    margin: 0 auto;
+    /* background: #aaf; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.icon {
+    width: 24px;
+    margin-right: 16px;
+    vertical-align: sub;
+}
+
+/* 快速連結 */
+.content .nav {
+    background: var(--bg_gray);
+    display: inline-block;
+    align-self: flex-end;
+    margin-top: 40px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+}
+
+.content .nav a::after , .content .nav a:first-child::before {
+    content: '|';
+    margin: 8px;
+    color: var(--font_gray);
+    border-bottom: 1px solid white;
+    /* 這裡還要調整！！！ 還是要在 a 裡面再包 span 給 border-bottom？*/
+}
+
+/* 各區塊大標題 */
+.content .main_title {
+    padding: 60px 0 40px 0 ;
+    margin-bottom: 20px; 
+    background-color: var(--bg_gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .main_title .eng_title {
+    margin-bottom: 16px;
+    letter-spacing: 0.5rem;
+    font-style: italic;
+    font-family: 'Prata', serif;  
+    font-size: 1.6rem;
+}
+
+.content .main_title .chinese_title {
+    font-size: 1.1rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
+}
+
+
+.callout_block {
+    display: flex;
+    align-items: start;
+    margin-bottom: 4px;
+    padding: 16px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    color: var(--font_gray);
+    font-size: 0.85rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.callout_block .text_title {
+    font-weight: 700;
+}
+
+
+.personal_info .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 40px 0;
+}
+
+.personal_info .container .personal_item {
+    width: 30%;
+    border: 1px solid white;
+}
+
+.personal_item .description {
+    margin-bottom: 16px;
+}
+
+.personal_info .container .personal_item .name {
+    display: inline-block;
+    /* padding: 2px 0; */
+    margin: 16px 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    background-color: var(--bg_gray);
+    border-bottom: 1px solid #000;
+}
+
+.personal_info .container .personal_item .name span {
+    font-style: italic;
+    font-size: 1.4rem;
+    letter-spacing: 0.1rem;
+}
+
+.personal_info .container .photo img {
+    height: 100%;
+    width: 100%;
+}
+.personal_info .container .hashtag_item h3 {
+    font-size: 1.2rem;
+}    
+
+.personal_info .container .hashtag_item h3 {
+    background: var(--bg_gray);
+    padding: 3px 2px;  
+    margin-bottom: 8px;
+}
+
+.skill_tree .container {
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+}
+
+
+.skill_tree .dev {
+    flex-grow: 2;
+    display: flex; 
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.skill_tree .dev .skill_header+div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.skill_tree .other {
+    flex-grow: 1;
+}
+
+.skill_tree .skill_header {
+    width: 100%;
+    border-left: 3px solid #000;
+    padding-left: 16px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.skill_tree .skill_warp {
+    height: 360px;
+    width: 440px;
+    display: flex;
+    flex-direction: column;
+}
+
+.dev .skill_warp:nth-child(2) {
+    margin-left: 20px;
+}
+
+.portfolio {
+    margin-bottom: 40px;
+}
+
+.portfolio .container {
+    display: flex;
+    
+}
+
+.portfolio .container .dev_demo {
+    margin-right: 40px;
+}    
+
+.portfolio .container .dev_demo , .other_demo {
+    width: 100%;
+
+}
+
+.portfolio .title {
+    background-color: var(--bg_gray);
+    padding: 4px;
+    margin-bottom: 4px;
+    font-size: 1.2rem;
+}
+
+.portfolio .mark {
+    padding: 0 4px;
+    border-radius: 4px;
+    background-color: var(--bg_gray);
+    color: var(--font_gray);
+    font-size: 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 300;
+    /* letter-spacing: 0.1rem; */
+}
+
+.portfolio .demo_warp ul:first-of-type , 
+.portfolio .other_warp ul:first-of-type {
+    padding-left: 30px;
+}
+
+/* .portfolio .demo_warp li, 
+.portfolio .other_warp li {
+    font-weight: 600;
+} */
+
+.icon_link {
+    border-bottom: none;
+}
+
+.icon_link img {
+    width: 16px;
+    margin-right: 4px;
+}
+
+.icon_link span {
+    border-bottom: 1px solid #aaa;
+    color: #000;
+}
+
+.portfolio li {
+    margin: 8px 0;
+
+}
+
+
+.experience .work_item {
+    border-bottom: 2px solid var(--bg_gray);
+    padding-bottom: 8px;
+}
+
+.experience .work_item:last-child {
+    border-bottom: none;
+}
+
+.experience .work_item h3 {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.quote_block {
+    margin: 12px 4px;
+    padding-left: 4px;
+    border-left: 3px solid #333;
+    line-height: 2rem;
+}
+
+.quote_block span {
+    display: block;
+    margin-left: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    /* letter-spacing: 0.1rem; */
+}
+
+.quote_block ul {
+    margin: 0;
+    /* padding-left: 12px; */
+}
+
+@media (max-width: 1439px) {
+    .content {
+        max-width: 960px;
+    }
+
+    .personal_info .container {
+        justify-content: start;
+
+    }
+
+    .info {
+        width: 40%;
+    }
+
+    .photo {
+        order: -1;
+        /* width: ; */
+        display: none;
+    }
+
+    .hashtag {
+        width: 60%;
+    }
+
+    .name span {
+        display: block;
+    }
+
+    .connect .callout_block a {
+        display: block;
+    }
+}
+
+/* 開始手機版面 */
+@media (max-width: 1023px) {
+    .content {
+        max-width: 680px;
+    }
+
+}
