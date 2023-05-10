@@ -21,6 +21,7 @@ html,body {
 *>a:hover {
     background-color: var(--bg_gray);
     opacity: 0.8;
+    border-radius: 2px;
 }
 
 .cover {
@@ -170,7 +171,6 @@ html,body {
     flex-direction: column;
     justify-content: start;
     align-items: start;
-    /* flex-wrap: wrap; */
 }
 
 #skill_tree .dev .skill_header+div {
@@ -195,10 +195,11 @@ html,body {
     width: 440px;
     display: flex;
     flex-direction: column;
+    align-items: stretch;
 }
 
 .dev .skill_warp:nth-child(2) {
-    margin-left: 20px;
+    margin-left: 12px;
 }
 
 #portfolio {
@@ -244,6 +245,7 @@ html,body {
 .icon_link {
     border-bottom: none;
     display: inline-block;
+    border-radius: 2px;
 }
 
 .icon_link img {
