@@ -1,9 +1,7 @@
 html,body {
     margin: 0;
     padding: 0;
-    /* font-family: 'Noto Sans TC', sans-serif;  */
     font-family: 'Noto Serif', serif;
-    /* font-weight: 300; */
     font-size: 0.95rem;
     line-height: 1.5rem;
     letter-spacing: 0.05rem;
@@ -12,19 +10,17 @@ html,body {
 :root {
     --font_gray: #666;
     --bg_gray: #eee;
-
 }
 
 *>a {
-    color: #aaa;
+    color: var(--font_gray);
     text-decoration: none;
     border-bottom: 1px solid #aaa;
 }
 
-
 .cover {
     height: 240px;
-    width: 100vw;
+    width: 100%;
     background: 
     url("https://images.unsplash.com/photo-1590966237968-8ef11924362d?ixlib=rb-4.0.3&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=4800") 
         scroll 
@@ -63,6 +59,10 @@ html,body {
     color: var(--font_gray);
     border-bottom: 1px solid white;
     /* 這裡還要調整！！！ 還是要在 a 裡面再包 span 給 border-bottom？*/
+}
+
+.content .nav:last-child {
+    margin-bottom: 20px;
 }
 
 /* 各區塊大標題 */
@@ -155,19 +155,20 @@ html,body {
     margin-bottom: 8px;
 }
 
+/* skill_tree */
 .skill_tree .container {
     display: flex;
     justify-content: start;
     align-items: flex-start;
 }
 
-
 .skill_tree .dev {
     flex-grow: 2;
     display: flex; 
+    flex-direction: column;
     justify-content: start;
-    align-items: center;
-    flex-wrap: wrap;
+    align-items: start;
+    /* flex-wrap: wrap; */
 }
 
 .skill_tree .dev .skill_header+div {
@@ -181,7 +182,6 @@ html,body {
 }
 
 .skill_tree .skill_header {
-    width: 100%;
     border-left: 3px solid #000;
     padding-left: 16px;
     font-weight: bold;
@@ -205,7 +205,6 @@ html,body {
 
 .portfolio .container {
     display: flex;
-    
 }
 
 .portfolio .container .dev_demo {
@@ -214,7 +213,6 @@ html,body {
 
 .portfolio .container .dev_demo , .other_demo {
     width: 100%;
-
 }
 
 .portfolio .title {
@@ -240,11 +238,6 @@ html,body {
     padding-left: 30px;
 }
 
-/* .portfolio .demo_warp li, 
-.portfolio .other_warp li {
-    font-weight: 600;
-} */
-
 .icon_link {
     border-bottom: none;
 }
@@ -261,9 +254,7 @@ html,body {
 
 .portfolio li {
     margin: 8px 0;
-
 }
-
 
 .experience .work_item {
     border-bottom: 2px solid var(--bg_gray);
@@ -291,12 +282,10 @@ html,body {
     margin-left: 16px;
     font-size: 0.95rem;
     font-weight: 600;
-    /* letter-spacing: 0.1rem; */
 }
 
 .quote_block ul {
     margin: 0;
-    /* padding-left: 12px; */
 }
 
 @media (max-width: 1439px) {
@@ -305,37 +294,114 @@ html,body {
     }
 
     .personal_info .container {
-        justify-content: start;
-
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
     }
 
-    .info {
-        width: 40%;
+    .personal_info .container .info {
+        order: 2;
+        width: 560px;
     }
 
-    .photo {
-        order: -1;
-        /* width: ; */
-        display: none;
+    .personal_info .container .photo {
+        order: 1;
+        width: 360px;
     }
 
-    .hashtag {
-        width: 60%;
+    .personal_info .container .hashtag {
+        width: 100%;
+        order: 3;
     }
-
-    .name span {
-        display: block;
-    }
-
+    
     .connect .callout_block a {
         display: block;
     }
+
+    .skill_tree .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skill_tree .dev .skill_warp {
+        width: 50%;
+
+    }
+    
+    .skill_tree .other ,
+    .skill_tree .other .skill_warp {
+        width: 100%;
+    }
+
 }
 
 /* 開始手機版面 */
 @media (max-width: 1023px) {
     .content {
-        max-width: 680px;
+        padding: 0 80px;
     }
 
+    .content .nav {
+        align-self: center;
+
+    } 
+
+
+    .personal_info .container {
+        justify-content: center;
+        margin-bottom: 0;
+    }
+
+    .personal_info .container .info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .personal_info .info .description {
+        text-align: center;
+    }
+
+    .personal_info .connect {
+        width: 100%;
+    }
+
+    .connect .callout_block a {
+        display: inline-block;
+    }
+
+    .skill_tree .dev {
+        margin-bottom: 40px;
+    }
+
+    .portfolio .dev_demo .title {
+        margin: 4px 0;  
+    }
+
+    .skill_tree .dev .skill_header+div {
+        flex-direction: column;
+    }
+    
+    .skill_tree .dev .skill_warp,
+    .skill_tree .other .skill_warp {
+        width: 100%;
+        height: auto;
+    }
+
+    .dev .skill_warp:nth-child(2) {
+        margin: 0;
+    }
+    
+    .portfolio .container {
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width:767px) {
+    .content {
+        padding: 0 20px;
+    }
 }
