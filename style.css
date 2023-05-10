@@ -18,6 +18,11 @@ html,body {
     border-bottom: 1px solid #aaa;
 }
 
+*>a:hover {
+    background-color: var(--bg_gray);
+    opacity: 0.8;
+}
+
 .cover {
     height: 240px;
     width: 100%;
@@ -31,7 +36,6 @@ html,body {
 .content {
     max-width: 1360px;
     margin: 0 auto;
-    /* background: #aaf; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -39,26 +43,25 @@ html,body {
 
 .icon {
     width: 24px;
-    margin-right: 16px;
-    vertical-align: sub;
+    margin: 4px 16px 0 0;
 }
 
 /* 快速連結 */
 .content .nav {
     background: var(--bg_gray);
-    display: inline-block;
+    /* display: inline-block; */
     align-self: flex-end;
     margin-top: 40px;
     border-radius: 3px;
     font-size: 0.8rem;
+    display: flex;
+    flex-direction: row;
 }
 
-.content .nav a::after , .content .nav a:first-child::before {
+.content .nav span::after , .content .nav span:first-child::before {
     content: '|';
     margin: 8px;
     color: var(--font_gray);
-    border-bottom: 1px solid white;
-    /* 這裡還要調整！！！ 還是要在 a 裡面再包 span 給 border-bottom？*/
 }
 
 .content .nav:last-child {
@@ -78,10 +81,10 @@ html,body {
 
 .content .main_title .eng_title {
     margin-bottom: 16px;
-    letter-spacing: 0.5rem;
-    font-style: italic;
     font-family: 'Prata', serif;  
     font-size: 1.6rem;
+    letter-spacing: 0.5rem;
+    font-style: italic;
 }
 
 .content .main_title .chinese_title {
@@ -89,7 +92,6 @@ html,body {
     font-weight: 400;
     letter-spacing: 1rem;
 }
-
 
 .callout_block {
     display: flex;
@@ -99,7 +101,7 @@ html,body {
     border-radius: 3px;
     border: 1px solid #ccc;
     color: var(--font_gray);
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     width: 100%;
     box-sizing: border-box;
 }
@@ -109,14 +111,14 @@ html,body {
 }
 
 
-.personal_info .container {
+#personal_info .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin: 40px 0;
 }
 
-.personal_info .container .personal_item {
+#personal_info .container .personal_item {
     width: 30%;
     border: 1px solid white;
 }
@@ -125,9 +127,9 @@ html,body {
     margin-bottom: 16px;
 }
 
-.personal_info .container .personal_item .name {
+#personal_info .container .personal_item .name {
     display: inline-block;
-    /* padding: 2px 0; */
+    padding: 2px 0;
     margin: 16px 0;
     font-size: 1.8rem;
     font-weight: bold;
@@ -135,34 +137,34 @@ html,body {
     border-bottom: 1px solid #000;
 }
 
-.personal_info .container .personal_item .name span {
+#personal_info .container .personal_item .name span {
     font-style: italic;
     font-size: 1.4rem;
     letter-spacing: 0.1rem;
 }
 
-.personal_info .container .photo img {
+#personal_info .container .photo img {
     height: 100%;
     width: 100%;
 }
-.personal_info .container .hashtag_item h3 {
+#personal_info .container .hashtag_item h3 {
     font-size: 1.2rem;
 }    
 
-.personal_info .container .hashtag_item h3 {
+#personal_info .container .hashtag_item h3 {
     background: var(--bg_gray);
     padding: 3px 2px;  
     margin-bottom: 8px;
 }
 
 /* skill_tree */
-.skill_tree .container {
+#skill_tree .container {
     display: flex;
     justify-content: start;
     align-items: flex-start;
 }
 
-.skill_tree .dev {
+#skill_tree .dev {
     flex-grow: 2;
     display: flex; 
     flex-direction: column;
@@ -171,24 +173,24 @@ html,body {
     /* flex-wrap: wrap; */
 }
 
-.skill_tree .dev .skill_header+div {
+#skill_tree .dev .skill_header+div {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.skill_tree .other {
+#skill_tree .other {
     flex-grow: 1;
 }
 
-.skill_tree .skill_header {
+#skill_tree .skill_header {
     border-left: 3px solid #000;
     padding-left: 16px;
     font-weight: bold;
     margin-bottom: 12px;
 }
 
-.skill_tree .skill_warp {
+#skill_tree .skill_warp {
     height: 360px;
     width: 440px;
     display: flex;
@@ -199,30 +201,31 @@ html,body {
     margin-left: 20px;
 }
 
-.portfolio {
+#portfolio {
     margin-bottom: 40px;
 }
 
-.portfolio .container {
+#portfolio .container {
     display: flex;
 }
 
-.portfolio .container .dev_demo {
+#portfolio .container .dev_demo {
     margin-right: 40px;
 }    
 
-.portfolio .container .dev_demo , .other_demo {
+#portfolio .container .dev_demo ,
+#portfolio .container .other_demo {
     width: 100%;
 }
 
-.portfolio .title {
+#portfolio .title {
     background-color: var(--bg_gray);
     padding: 4px;
     margin-bottom: 4px;
     font-size: 1.2rem;
 }
 
-.portfolio .mark {
+#portfolio .mark {
     padding: 0 4px;
     border-radius: 4px;
     background-color: var(--bg_gray);
@@ -230,16 +233,17 @@ html,body {
     font-size: 8px;
     font-family: 'Noto Sans TC', sans-serif;
     font-weight: 300;
-    /* letter-spacing: 0.1rem; */
+    display: inline-block;
 }
 
-.portfolio .demo_warp ul:first-of-type , 
-.portfolio .other_warp ul:first-of-type {
+#portfolio .demo_warp ul:first-of-type , 
+#portfolio .other_warp ul:first-of-type {
     padding-left: 30px;
 }
 
 .icon_link {
     border-bottom: none;
+    display: inline-block;
 }
 
 .icon_link img {
@@ -249,23 +253,23 @@ html,body {
 
 .icon_link span {
     border-bottom: 1px solid #aaa;
-    color: #000;
+    color: var(--font_gray);
 }
 
-.portfolio li {
+#portfolio li {
     margin: 8px 0;
 }
 
-.experience .work_item {
+#experience .work_item {
     border-bottom: 2px solid var(--bg_gray);
     padding-bottom: 8px;
 }
 
-.experience .work_item:last-child {
+#experience .work_item:last-child {
     border-bottom: none;
 }
 
-.experience .work_item h3 {
+#experience .work_item h3 {
     margin-bottom: 12px;
     font-size: 1.2rem;
 }
@@ -293,43 +297,39 @@ html,body {
         max-width: 960px;
     }
 
-    .personal_info .container {
+    #personal_info .container {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
     }
 
-    .personal_info .container .info {
+    #personal_info .container .info {
         order: 2;
         width: 560px;
     }
 
-    .personal_info .container .photo {
+    #personal_info .container .photo {
         order: 1;
         width: 360px;
     }
 
-    .personal_info .container .hashtag {
+    #personal_info .container .hashtag {
         width: 100%;
         order: 3;
     }
-    
-    .connect .callout_block a {
-        display: block;
-    }
 
-    .skill_tree .container {
+    #skill_tree .container {
         display: flex;
         flex-direction: column;
     }
 
-    .skill_tree .dev .skill_warp {
+    #skill_tree .dev .skill_warp {
         width: 50%;
 
     }
     
-    .skill_tree .other ,
-    .skill_tree .other .skill_warp {
+    #skill_tree .other ,
+    #skill_tree .other .skill_warp {
         width: 100%;
     }
 
@@ -337,22 +337,35 @@ html,body {
 
 /* 開始手機版面 */
 @media (max-width: 1023px) {
+    html, body {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        letter-spacing: 0.05rem;
+    }
+
     .content {
         padding: 0 80px;
     }
 
     .content .nav {
         align-self: center;
-
+        font-size: 0.9rem;
     } 
 
+    .content .callout_block .icon {
+        margin-right: 12px;
+    }
 
-    .personal_info .container {
+    .content .main_title .chinese_title {
+        font-size: 1.2rem;
+    }
+
+    #personal_info .container {
         justify-content: center;
         margin-bottom: 0;
     }
 
-    .personal_info .container .info {
+    #personal_info .container .info {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -360,32 +373,28 @@ html,body {
         align-items: center;
     }
 
-    .personal_info .info .description {
-        text-align: center;
+    #personal_info .container .personal_item .name {
+        margin-bottom: 24px;
     }
 
-    .personal_info .connect {
+    #personal_info .connect {
         width: 100%;
     }
 
-    .connect .callout_block a {
-        display: inline-block;
+    #skill_tree .dev {
+        margin-bottom: 20px;
     }
 
-    .skill_tree .dev {
-        margin-bottom: 40px;
-    }
-
-    .portfolio .dev_demo .title {
+    #portfolio .dev_demo .title {
         margin: 4px 0;  
     }
 
-    .skill_tree .dev .skill_header+div {
+    #skill_tree .dev .skill_header+div {
         flex-direction: column;
     }
     
-    .skill_tree .dev .skill_warp,
-    .skill_tree .other .skill_warp {
+    #skill_tree .dev .skill_warp,
+    #skill_tree .other .skill_warp {
         width: 100%;
         height: auto;
     }
@@ -394,7 +403,7 @@ html,body {
         margin: 0;
     }
     
-    .portfolio .container {
+    #portfolio .container {
         flex-direction: column;
     }
 
@@ -404,4 +413,53 @@ html,body {
     .content {
         padding: 0 20px;
     }
+
+    .content .main_title .eng_title {
+        font-size: 1rem;
+        letter-spacing: 0.2rem;
+    }
+
+    .content .main_title .chinese_title {
+        font-size: 1.2rem;
+        letter-spacing: 0;
+    }
+
+    .content .nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        display: none;
+    }
+
+    .content .nav span::before {
+        content: '|';
+        margin: 8px;
+        color: var(--font_gray);
+    }
+
+    .content .main_title {
+        margin-top: 40px;
+        padding: 40px 0 32px 0;
+    }
+    
+    .quote_block {
+        line-height: 1.6rem;
+    }
+
+    #personal_info .container {
+        margin: 0;
+    }
+    
+    #personal_info .info .name span {
+        display: block;
+    }
+
+    #personal_info .container .hashtag_item h3 {
+        font-size: 1.1rem;
+    }
+
+    #portfolio .other_demo li a {
+        vertical-align: top;
+    }
+
 }
